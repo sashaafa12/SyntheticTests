@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6523D5E6-9266-41F3-A5BE-14ABCB44FF9A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>framework</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./glut;./libExt;./3D;./libTexture;./libTexture/libpng;./libTexture/jpeg;./libTexture/zlib;./unrarlib/unrarlib;./utils;</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>libTexture/zlib/zlib.lib;libTexture/jpeg/libjpeg.lib;libTexture/libpng/libpng.lib;</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./glut;./libExt;./3D;./libTexture;./libTexture/libpng;./libTexture/jpeg;./libTexture/zlib;./unrarlib/unrarlib;./utils;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>libTexture/zlib/zlib.lib;libTexture/jpeg/libjpeg.lib;libTexture/libpng/libpng.lib;</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="3D\BoundingBox.h" />
+    <ClInclude Include="3D\Math3D.h" />
+    <ClInclude Include="3D\Matrix3D.h" />
+    <ClInclude Include="3D\Matrix4x4.h" />
+    <ClInclude Include="3D\Plane.h" />
+    <ClInclude Include="3D\Quaternion.h" />
+    <ClInclude Include="3D\QuatSpline.h" />
+    <ClInclude Include="3D\Transform3D.h" />
+    <ClInclude Include="3D\vec2.h" />
+    <ClInclude Include="3D\vec3.h" />
+    <ClInclude Include="3D\Vector2D.h" />
+    <ClInclude Include="3D\Vector3D.h" />
+    <ClInclude Include="3D\Vector4D.h" />
+    <ClInclude Include="Framebuffer\FrameBuffer.h" />
+    <ClInclude Include="libCamera\Camera.h" />
+    <ClInclude Include="libCamera\Frustum.h" />
+    <ClInclude Include="libExt\libExt.h" />
+    <ClInclude Include="libMesh\3dsLoader.h" />
+    <ClInclude Include="libMesh\AseLoader.h" />
+    <ClInclude Include="libMesh\LwoLoader.h" />
+    <ClInclude Include="libMesh\Material.h" />
+    <ClInclude Include="libMesh\Md3Loader.h" />
+    <ClInclude Include="libMesh\Md5Loader.h" />
+    <ClInclude Include="libMesh\Mesh.h" />
+    <ClInclude Include="libMesh\MeshNode.h" />
+    <ClInclude Include="libMesh\MeshUtils.h" />
+    <ClInclude Include="libMesh\NodeVisitor.h" />
+    <ClInclude Include="libMesh\ObjLoader.h" />
+    <ClInclude Include="libTexture\BmpLoader.h" />
+    <ClInclude Include="libTexture\CompressedTexture.h" />
+    <ClInclude Include="libTexture\Data.h" />
+    <ClInclude Include="libTexture\DdsDefs.h" />
+    <ClInclude Include="libTexture\DdsLoader.h" />
+    <ClInclude Include="libTexture\FileSystem.h" />
+    <ClInclude Include="libTexture\JpegLoader.h" />
+    <ClInclude Include="libTexture\libTexture.h" />
+    <ClInclude Include="libTexture\libTexture3D.h" />
+    <ClInclude Include="libTexture\PngLoader.h" />
+    <ClInclude Include="libTexture\RarFileSystem.h" />
+    <ClInclude Include="libTexture\Texture.h" />
+    <ClInclude Include="libTexture\TextureLoader.h" />
+    <ClInclude Include="libTexture\TgaLoader.h" />
+    <ClInclude Include="libTexture\TypeDefs.h" />
+    <ClInclude Include="libTexture\ZipFileSystem.h" />
+    <ClInclude Include="PBuffer\AttrList.h" />
+    <ClInclude Include="PBuffer\Win32\PBuffer.h" />
+    <ClInclude Include="Program\FragmentProgram.h" />
+    <ClInclude Include="Program\GlslProgram.h" />
+    <ClInclude Include="Program\ParamProxy.h" />
+    <ClInclude Include="Program\VertexProgram.h" />
+    <ClInclude Include="unrarlib\unrarlib\unrarlib.h" />
+    <ClInclude Include="utils\boxes.h" />
+    <ClInclude Include="utils\noise.h" />
+    <ClInclude Include="utils\noise3D.h" />
+    <ClInclude Include="utils\StringUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="3D\Math3D.cpp" />
+    <ClCompile Include="3D\Matrix3D.cpp" />
+    <ClCompile Include="3D\Matrix4x4.cpp" />
+    <ClCompile Include="3D\Plane.cpp" />
+    <ClCompile Include="3D\Quaternion.cpp" />
+    <ClCompile Include="3D\QuatSpline.cpp" />
+    <ClCompile Include="3D\Transform3D.cpp" />
+    <ClCompile Include="3D\vec2.cpp" />
+    <ClCompile Include="3D\vec3.cpp" />
+    <ClCompile Include="3D\Vector2D.cpp" />
+    <ClCompile Include="3D\Vector3D.cpp" />
+    <ClCompile Include="3D\Vector4D.cpp" />
+    <ClCompile Include="Framebuffer\FrameBuffer.cpp" />
+    <ClCompile Include="libCamera\Camera.cpp" />
+    <ClCompile Include="libCamera\Frustum.cpp" />
+    <ClCompile Include="libExt\libExt.cpp" />
+    <ClCompile Include="libMesh\3dsLoader.cpp" />
+    <ClCompile Include="libMesh\AseLoader.cpp" />
+    <ClCompile Include="libMesh\LwoLoader.cpp" />
+    <ClCompile Include="libMesh\Material.cpp" />
+    <ClCompile Include="libMesh\Md3Loader.cpp" />
+    <ClCompile Include="libMesh\Md5Loader.cpp" />
+    <ClCompile Include="libMesh\Mesh.cpp" />
+    <ClCompile Include="libMesh\MeshNode.cpp" />
+    <ClCompile Include="libMesh\MeshUtils.cpp" />
+    <ClCompile Include="libMesh\ObjLoader.cpp" />
+    <ClCompile Include="libTexture\BmpLoader.cpp" />
+    <ClCompile Include="libTexture\CompressedTexture.cpp" />
+    <ClCompile Include="libTexture\Data.cpp" />
+    <ClCompile Include="libTexture\ddsloader.cpp" />
+    <ClCompile Include="libTexture\FileSystem.cpp" />
+    <ClCompile Include="libTexture\JpegLoader.cpp" />
+    <ClCompile Include="libTexture\libTexture.cpp" />
+    <ClCompile Include="libTexture\libTexture3D.cpp" />
+    <ClCompile Include="libTexture\PngLoader.cpp" />
+    <ClCompile Include="libTexture\RarFileSystem.cpp" />
+    <ClCompile Include="libTexture\Texture.cpp" />
+    <ClCompile Include="libTexture\TgaLoader.cpp" />
+    <ClCompile Include="libTexture\ZipFileSystem.cpp" />
+    <ClCompile Include="PBuffer\Win32\PBuffer.cpp" />
+    <ClCompile Include="Program\FragmentProgram.cpp" />
+    <ClCompile Include="Program\glslprogram.cpp" />
+    <ClCompile Include="Program\ParamProxy.cpp" />
+    <ClCompile Include="Program\VertexProgram.cpp" />
+    <ClCompile Include="unrarlib\unrarlib\unrarlib.c" />
+    <ClCompile Include="utils\boxes.cpp" />
+    <ClCompile Include="utils\make3D.cpp" />
+    <ClCompile Include="utils\noise.cpp" />
+    <ClCompile Include="utils\noise3D.cpp" />
+    <ClCompile Include="utils\StringUtils.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

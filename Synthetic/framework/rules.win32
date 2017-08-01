@@ -1,0 +1,42 @@
+#
+# Rules to compile programs under Win32
+#
+
+.cpp.obj:
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+{$(LIBEXTPATH)}.cpp.obj::
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+{$(LIBTEXTUREPATH)}.cpp.obj::
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+{$(LIB3DPATH)}.cpp.obj::
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+{$(UTILSPATH)}.cpp.obj::
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+{$(PBUFFERPATH)}.cpp.obj::
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+{$(PROGRAMPATH)}.cpp.obj::
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+{$(CAMERAPATH)}.cpp.obj::
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+{$(LIBMESHPATH)}.cpp.obj::
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+{$(FRAMEBUFFERPATH)}.cpp.obj::
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+{$(UNRARPATH)}.c.obj::
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+.c.obj:
+	$(CC) $(CFLAGS) $(INC) /c $<
+
+version.res : version.rc
+	$(RC) $(RCFLAGS) /r /fo"version.res" version.rc

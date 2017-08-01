@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Synthetic", "Synthetic\Synthetic.vcxproj", "{A221A845-5384-4709-AF94-44923DBE9A86}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6523D5E6-9266-41F3-A5BE-14ABCB44FF9A} = {6523D5E6-9266-41F3-A5BE-14ABCB44FF9A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "framework", "framework\framework.vcxproj", "{6523D5E6-9266-41F3-A5BE-14ABCB44FF9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A221A845-5384-4709-AF94-44923DBE9A86}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A221A845-5384-4709-AF94-44923DBE9A86}.Debug|Win32.Build.0 = Debug|Win32
+		{A221A845-5384-4709-AF94-44923DBE9A86}.Release|Win32.ActiveCfg = Release|Win32
+		{A221A845-5384-4709-AF94-44923DBE9A86}.Release|Win32.Build.0 = Release|Win32
+		{6523D5E6-9266-41F3-A5BE-14ABCB44FF9A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6523D5E6-9266-41F3-A5BE-14ABCB44FF9A}.Debug|Win32.Build.0 = Debug|Win32
+		{6523D5E6-9266-41F3-A5BE-14ABCB44FF9A}.Release|Win32.ActiveCfg = Release|Win32
+		{6523D5E6-9266-41F3-A5BE-14ABCB44FF9A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

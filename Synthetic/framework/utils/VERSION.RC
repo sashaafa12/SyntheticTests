@@ -1,0 +1,32 @@
+//
+// Example of using Cg with OpenGL
+//
+// Author: Alex V. Boreskoff <alexboreskoff@mtu-net.ru>, <steps3d@narod.ru>
+//
+
+
+#include <winver.h>
+
+
+#define VER_FILEVERSION			1,0
+#define VER_FILEVERSION_STR		"1.0"
+#define VER_PRODUCTVERSION		1,0
+#define VER_PRODUCTVERSION_STR		"1.0"
+
+#define VER_FILEFLAGSMASK		VS_FF_PRERELEASE | VS_FF_PATCHED
+#define VER_FILEFLAGS			VS_FF_PRERELEASE
+#define VER_FILEOS				VOS__WINDOWS32
+#define VER_FILETYPE			VFT_DLL
+#define VER_FILESUBTYPE			VFT2_UNKNOWN
+
+#define VER_COMPANYNAME_STR		""
+#define VER_LEGALCOPYRIGHT_STR		"Author: Alex V. Boreskoff"
+#define VER_PRODUCTNAME_STR		"Cg OpenGL example"
+
+#define VER_ANSICP
+
+#define VER_FILEDESCRIPTION_STR		"Cg OpenGL example"
+#define VER_ORIGINALFILENAME_STR	"cg-example.exe"
+#define VER_INTERNALNAME_STR		"cg-example"
+
+#include <common.ver>

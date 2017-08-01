@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы исходного кода">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы исходного кода\3D">
+      <UniqueIdentifier>{7f386daf-521f-4849-b153-85dbe4a0b6fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Framebuffer">
+      <UniqueIdentifier>{4936e351-5761-4b14-8dd1-2d57b6847759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\libCamera">
+      <UniqueIdentifier>{8878b255-2866-406f-abd0-7fefe2fa2cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\libExt">
+      <UniqueIdentifier>{f95782b3-c59d-41cd-8c44-b7c2f9e8687a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\libMesh">
+      <UniqueIdentifier>{ee8ac265-0f42-4204-87cd-6c4095e2b236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\libTexture">
+      <UniqueIdentifier>{d5d1286f-e1e4-491e-84d1-7ed8746c4a1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\PBuffer">
+      <UniqueIdentifier>{92eb13e0-06b6-43c6-816d-05182af9a074}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Program">
+      <UniqueIdentifier>{e56bf8bb-d389-4b91-8e16-603f0d757a59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\unrarlib">
+      <UniqueIdentifier>{1b97e747-c7a5-4742-ba3f-b6687a8c496f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\utils">
+      <UniqueIdentifier>{57e86826-92f3-4260-b26d-84b2a1afcdae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="3D\BoundingBox.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\Math3D.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\Matrix3D.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\Matrix4x4.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\Plane.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\Quaternion.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\QuatSpline.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\Transform3D.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\vec2.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\vec3.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\Vector2D.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\Vector3D.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="3D\Vector4D.h">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Framebuffer\FrameBuffer.h">
+      <Filter>Файлы исходного кода\Framebuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="libCamera\Camera.h">
+      <Filter>Файлы исходного кода\libCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="libCamera\Frustum.h">
+      <Filter>Файлы исходного кода\libCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="libExt\libExt.h">
+      <Filter>Файлы исходного кода\libExt</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\3dsLoader.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\AseLoader.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\LwoLoader.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\Material.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\Md3Loader.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\Md5Loader.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\Mesh.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\MeshNode.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\MeshUtils.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\NodeVisitor.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libMesh\ObjLoader.h">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\BmpLoader.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\CompressedTexture.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\Data.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\DdsDefs.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\DdsLoader.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\FileSystem.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\JpegLoader.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\libTexture.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\libTexture3D.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\PngLoader.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\RarFileSystem.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\Texture.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\TextureLoader.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\TgaLoader.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\TypeDefs.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="libTexture\ZipFileSystem.h">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\boxes.h">
+      <Filter>Файлы исходного кода\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\noise.h">
+      <Filter>Файлы исходного кода\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\noise3D.h">
+      <Filter>Файлы исходного кода\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\StringUtils.h">
+      <Filter>Файлы исходного кода\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="unrarlib\unrarlib\unrarlib.h">
+      <Filter>Файлы исходного кода\unrarlib</Filter>
+    </ClInclude>
+    <ClInclude Include="Program\FragmentProgram.h">
+      <Filter>Файлы исходного кода\Program</Filter>
+    </ClInclude>
+    <ClInclude Include="Program\GlslProgram.h">
+      <Filter>Файлы исходного кода\Program</Filter>
+    </ClInclude>
+    <ClInclude Include="Program\ParamProxy.h">
+      <Filter>Файлы исходного кода\Program</Filter>
+    </ClInclude>
+    <ClInclude Include="Program\VertexProgram.h">
+      <Filter>Файлы исходного кода\Program</Filter>
+    </ClInclude>
+    <ClInclude Include="PBuffer\Win32\PBuffer.h">
+      <Filter>Файлы исходного кода\PBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="PBuffer\AttrList.h">
+      <Filter>Файлы исходного кода\PBuffer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="3D\Math3D.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\Matrix3D.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\Matrix4x4.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\Plane.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\Quaternion.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\QuatSpline.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\Transform3D.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\vec2.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\vec3.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\Vector2D.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\Vector3D.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="3D\Vector4D.cpp">
+      <Filter>Файлы исходного кода\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Framebuffer\FrameBuffer.cpp">
+      <Filter>Файлы исходного кода\Framebuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="libCamera\Camera.cpp">
+      <Filter>Файлы исходного кода\libCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="libCamera\Frustum.cpp">
+      <Filter>Файлы исходного кода\libCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="libExt\libExt.cpp">
+      <Filter>Файлы исходного кода\libExt</Filter>
+    </ClCompile>
+    <ClCompile Include="libMesh\3dsLoader.cpp">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="libMesh\AseLoader.cpp">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="libMesh\LwoLoader.cpp">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="libMesh\Material.cpp">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="libMesh\Md3Loader.cpp">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="libMesh\Md5Loader.cpp">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="libMesh\Mesh.cpp">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="libMesh\MeshNode.cpp">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="libMesh\MeshUtils.cpp">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="libMesh\ObjLoader.cpp">
+      <Filter>Файлы исходного кода\libMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\BmpLoader.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\CompressedTexture.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\Data.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\ddsloader.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\FileSystem.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\JpegLoader.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\libTexture.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\libTexture3D.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\PngLoader.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\RarFileSystem.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\Texture.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\TgaLoader.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="libTexture\ZipFileSystem.cpp">
+      <Filter>Файлы исходного кода\libTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\boxes.cpp">
+      <Filter>Файлы исходного кода\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\make3D.cpp">
+      <Filter>Файлы исходного кода\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\noise.cpp">
+      <Filter>Файлы исходного кода\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\noise3D.cpp">
+      <Filter>Файлы исходного кода\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\StringUtils.cpp">
+      <Filter>Файлы исходного кода\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="unrarlib\unrarlib\unrarlib.c">
+      <Filter>Файлы исходного кода\unrarlib</Filter>
+    </ClCompile>
+    <ClCompile Include="Program\FragmentProgram.cpp">
+      <Filter>Файлы исходного кода\Program</Filter>
+    </ClCompile>
+    <ClCompile Include="Program\glslprogram.cpp">
+      <Filter>Файлы исходного кода\Program</Filter>
+    </ClCompile>
+    <ClCompile Include="Program\ParamProxy.cpp">
+      <Filter>Файлы исходного кода\Program</Filter>
+    </ClCompile>
+    <ClCompile Include="Program\VertexProgram.cpp">
+      <Filter>Файлы исходного кода\Program</Filter>
+    </ClCompile>
+    <ClCompile Include="PBuffer\Win32\PBuffer.cpp">
+      <Filter>Файлы исходного кода\PBuffer</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
