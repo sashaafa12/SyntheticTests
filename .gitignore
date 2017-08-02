@@ -1,0 +1,11 @@
+*.opensdf
+*.sdf
+Synthetic/framework/Debug
+Synthetic/Synthetic/Debug
+Synthetic/framework/Release
+Synthetic/Synthetic/Release
+*.exe
+*.ilk
+*.lib
+*.pdb
+Synthetic/ipch/*
