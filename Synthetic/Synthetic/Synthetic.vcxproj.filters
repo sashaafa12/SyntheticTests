@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы исходного кода\program1">
+      <UniqueIdentifier>{44affbe3-7f37-47f9-a31d-8d94b1e42b28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\program2">
+      <UniqueIdentifier>{d47b3731-112d-4be8-8c16-50e557d4e07a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\program3">
+      <UniqueIdentifier>{ef5c984e-8892-4253-aae6-18c41f4e284c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -48,6 +57,24 @@
     </None>
     <None Include="blur.vsh">
       <Filter>Файлы исходного кода</Filter>
+    </None>
+    <None Include="dof1-p1.fsh">
+      <Filter>Файлы исходного кода\program1</Filter>
+    </None>
+    <None Include="dof1-p1.vsh">
+      <Filter>Файлы исходного кода\program1</Filter>
+    </None>
+    <None Include="dof1-p2.fsh">
+      <Filter>Файлы исходного кода\program2</Filter>
+    </None>
+    <None Include="dof1-p2.vsh">
+      <Filter>Файлы исходного кода\program2</Filter>
+    </None>
+    <None Include="dof1-p3.fsh">
+      <Filter>Файлы исходного кода\program3</Filter>
+    </None>
+    <None Include="dof1-p3.vsh">
+      <Filter>Файлы исходного кода\program3</Filter>
     </None>
   </ItemGroup>
 </Project>

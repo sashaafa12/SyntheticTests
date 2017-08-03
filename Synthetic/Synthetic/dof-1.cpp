@@ -65,7 +65,6 @@ void displayBoxes ()
     glPushMatrix ();
 
     glBindTexture   ( GL_TEXTURE_2D, teapotMap );
-    //glRotatef       ( angle * 45.3, 0, 1, 0 );  
     glutSolidTeapot ( 1.5 ); 
 
     glPopMatrix     ();
@@ -221,7 +220,7 @@ int main ( int argc, char * argv [] )
 
     decalMap  = createTexture2D ( true, "wood.png" );
     stoneMap  = createTexture2D ( true, "brick.tga" );
-    teapotMap = createTexture2D ( true, "../../Textures/hindi.png" );
+    teapotMap = createTexture2D ( true, "../../Textures/wood.png" );
     blockMap  = createTexture2D ( true, "../../Textures/block.bmp" );
 	
 	buffer.create ();

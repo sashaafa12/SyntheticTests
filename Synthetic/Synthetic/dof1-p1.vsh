@@ -3,6 +3,7 @@
 //
 
 varying float z;
+varying vec2 projection;
 
 void main(void)
 {
@@ -11,4 +12,8 @@ void main(void)
 	z               = pos.z;
 	gl_Position     = ftransform();
 	gl_TexCoord [0] = gl_MultiTexCoord0;
+
+	projection = vec2(pos.x, pos.y);
+	//gl_TexCoord [0].x = pos.x;
+	//gl_TexCoord [0].y = pos.y;
 }
