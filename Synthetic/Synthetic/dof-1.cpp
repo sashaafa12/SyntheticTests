@@ -45,7 +45,7 @@ float	radiusScale   = 3.0 / 512.0;
 
 //Camera		camera ( eye, 0, 0, 0 );	// camera to be used
 //SphericalCamera		camera ( eye, Vector3D(0, 0, -1), Vector3D(0, 1, 0), Vector3D(1, 0, 0) );	// camera to be used
-SphericalCamera		camera (5, 0, 0);	// camera to be used
+SphericalCamera		camera (5, M_PI / 2, 0);	// camera to be used
 
 FrameBuffer	buffer  ( 512, 512, FrameBuffer :: depth32 );
 FrameBuffer	buffer2 ( 512/4, 512/4 );
@@ -64,11 +64,9 @@ void displayBoxes ()
     glMatrixMode ( GL_MODELVIEW );
     glPushMatrix ();
 
-    //drawBox  ( Vector3D ( 0, 0, 0 ),   Vector3D ( 1, 1, 1 ),   stoneMap,  false );
-    
     glBindTexture   ( GL_TEXTURE_2D, teapotMap );
     //glRotatef       ( angle * 45.3, 0, 1, 0 );  
-    glutSolidTeapot ( 1.5 );
+    glutSolidTeapot ( 1.5 ); 
 
     glPopMatrix     ();
 }
@@ -176,7 +174,7 @@ void    specialKey ( int key, int x, int y )
         camera.changePhi(M_PI / 50);
     else
 		if ( key == GLUT_KEY_LEFT )
-			camera.changePhi(-M_PI / 50);
+			camera.changePhi(-M_PI / 50);	
 //
 //	camera.setEulerAngles ( yaw, pitch, roll );
 //
