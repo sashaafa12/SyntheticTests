@@ -42,6 +42,7 @@ float	yaw   = 1.0f, pitch = 0.0f,	roll  = 0.0f;
 float	focalDistance = 4.5;
 float	focalRange    = 20;
 float	radiusScale   = 3.0 / 512.0;
+float transform[16];
 
 //Camera		camera ( eye, 0, 0, 0 );	// camera to be used
 //SphericalCamera		camera ( eye, Vector3D(0, 0, -1), Vector3D(0, 1, 0), Vector3D(1, 0, 0) );	// camera to be used
@@ -80,7 +81,7 @@ void display ()
 	program1.bind            ();
 	program1.setUniformFloat ( "focalDistance", focalDistance );
 	program1.setUniformFloat ( "focalRange",    focalRange    );
-	//program1.setUniformMatrix( "transform0",    transform0    );
+	program1.setUniformMatrix( "transform",    transform    );
 	//program1.setUniformMatrix ( "transformInverted",    transformInverted    );
 	camera.apply             ();
 	

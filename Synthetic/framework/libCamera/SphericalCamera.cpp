@@ -67,6 +67,7 @@ void    SphericalCamera :: computeMatrix ()
     transf [2][2] = viewDir  [2];
 }
 
+extern float transform[16];
 
 void	SphericalCamera :: apply ()
 {
@@ -108,8 +109,8 @@ void	SphericalCamera :: apply ()
 	glMultMatrixf ( m );
 	glTranslatef  ( -pos.x, -pos.y, -pos.z );
 	
-	glGetFloatv ( GL_MODELVIEW_PROJECTION_NV,  proj);
-	glGetFloatv ( GL_PROJECTION_MATRIX, proj );
+	glGetFloatv ( GL_MODELVIEW_PROJECTION_NV,  transform);
+	//glGetFloatv ( GL_PROJECTION_MATRIX, transform );
 }
 
 void SphericalCamera :: changePhi(float i_delta)
