@@ -99,6 +99,7 @@
     <ClInclude Include="Framebuffer\FrameBuffer.h" />
     <ClInclude Include="libCamera\Camera.h" />
     <ClInclude Include="libCamera\Frustum.h" />
+    <ClInclude Include="libCamera\SphericalCamera.h" />
     <ClInclude Include="libExt\libExt.h" />
     <ClInclude Include="libMesh\3dsLoader.h" />
     <ClInclude Include="libMesh\AseLoader.h" />
@@ -155,6 +156,7 @@
     <ClCompile Include="Framebuffer\FrameBuffer.cpp" />
     <ClCompile Include="libCamera\Camera.cpp" />
     <ClCompile Include="libCamera\Frustum.cpp" />
+    <ClCompile Include="libCamera\SphericalCamera.cpp" />
     <ClCompile Include="libExt\libExt.cpp" />
     <ClCompile Include="libMesh\3dsLoader.cpp" />
     <ClCompile Include="libMesh\AseLoader.cpp" />

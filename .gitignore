@@ -9,3 +9,4 @@ Synthetic/Synthetic/Release
 *.lib
 *.pdb
 Synthetic/ipch/*
+*.suo

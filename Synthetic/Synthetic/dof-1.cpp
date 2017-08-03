@@ -29,7 +29,7 @@
 #include	"libCamera/Camera.h"
 #include <iostream>
 
-Vector3D    eye   ( -0.5, -0.5, 1.5 );  // camera position
+Vector3D    eye   ( 0, 0, -1 );  // camera position
 unsigned    decalMap;                   // decal (diffuse) texture
 unsigned    stoneMap;
 unsigned    teapotMap;
@@ -37,9 +37,7 @@ unsigned	blockMap;
 unsigned 	depthMap;
 
 float   angle = 0;
-float	yaw   = 0;
-float	pitch = 0;
-float	roll  = 0;
+float	yaw   = 1.0f, pitch = 0.0f,	roll  = 0.0f;
 float	focalDistance = 4.5;
 float	focalRange    = 20;
 float	radiusScale   = 3.0 / 512.0;
@@ -63,18 +61,12 @@ void displayBoxes ()
     glMatrixMode ( GL_MODELVIEW );
     glPushMatrix ();
 
-  /*  drawBox  ( Vector3D ( -5, -5, 0 ),   Vector3D ( 10, 10, 3 ),   stoneMap,  false );
-    drawBox  ( Vector3D ( 3, 2, 0.5 ),   Vector3D ( 1,  2,  2 ),   decalMap,  true  );
-    drawBox  ( Vector3D ( -3, -2, 0.5 ), Vector3D ( 1,  2,  2 ),   teapotMap, true  );
-    drawBox  ( Vector3D ( 1, -1, 0.25 ), Vector3D ( 1,  2,  1.5 ), blockMap,  true  );
-    drawBox  ( Vector3D ( -3, 3, 0.7 ),  Vector3D ( 1.5,  2,  1 ), decalMap,  true  );
-    drawBox  ( Vector3D ( 3, -3, 0.25 ), Vector3D ( 1,  1,  1.5 ), blockMap,  true  );
-*/
+    //drawBox  ( Vector3D ( 0, 0, 0 ),   Vector3D ( 1, 1, 1 ),   stoneMap,  false );
+    
     glBindTexture   ( GL_TEXTURE_2D, teapotMap );
-    glTranslatef    ( 0.2, 1, 1.5 );
-    glRotatef       ( angle * 45.3, 1, 0, 0 );
-    glRotatef       ( angle * 57.2, 0, 1, 0 );
-    glutSolidTeapot ( 0.3 );
+    glTranslatef    ( 0.0f, 0.0f, 0.0f );
+    glRotatef       ( angle * 45.3, 0, 1, 0 );  
+    glutSolidTeapot ( 0.5 );
 
     glPopMatrix     ();
 }
@@ -254,7 +246,7 @@ int main ( int argc, char * argv [] )
 
     decalMap  = createTexture2D ( true, "wood.png" );
     stoneMap  = createTexture2D ( true, "brick.tga" );
-    teapotMap = createTexture2D ( true, "../../Textures/water.bmp" );
+    teapotMap = createTexture2D ( true, "../../Textures/hindi.png" );
     blockMap  = createTexture2D ( true, "../../Textures/block.bmp" );
 	
 	buffer.create ();
@@ -337,7 +329,7 @@ int main ( int argc, char * argv [] )
 
 	camera.setRightHanded ( false );
 	camera.setEulerAngles ( 0, 0, -1.1);
-	
+
 
 	printf ( "Depth of Field demo.\n\tUse + and - to change focal distance.\n\tUse * and / to change focal range.\n\tUse mouse and wsad to control camera.\n" );
 	

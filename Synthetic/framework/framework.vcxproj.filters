@@ -213,6 +213,9 @@
     <ClInclude Include="PBuffer\AttrList.h">
       <Filter>Файлы исходного кода\PBuffer</Filter>
     </ClInclude>
+    <ClInclude Include="libCamera\SphericalCamera.h">
+      <Filter>Файлы исходного кода\libCamera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3D\Math3D.cpp">
@@ -364,6 +367,9 @@
     </ClCompile>
     <ClCompile Include="PBuffer\Win32\PBuffer.cpp">
       <Filter>Файлы исходного кода\PBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="libCamera\SphericalCamera.cpp">
+      <Filter>Файлы исходного кода\libCamera</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
