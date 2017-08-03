@@ -17,15 +17,12 @@ void	SphericalCamera :: setViewSize ( int theWidth, int theHeight, float theFov 
 
 SphericalCamera :: SphericalCamera(float i_ro, float i_phi, float i_theta)
 {
-
 	ro = i_ro;
 	phi = i_phi;
 	theta = i_theta;
 
 	updateCamera();
-
 	setViewSize (800, 600, 45);
-
 }
 
 void SphericalCamera :: updateCamera()
