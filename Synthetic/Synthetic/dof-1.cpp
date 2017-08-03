@@ -44,7 +44,8 @@ float	focalRange    = 20;
 float	radiusScale   = 3.0 / 512.0;
 
 //Camera		camera ( eye, 0, 0, 0 );	// camera to be used
-SphericalCamera		camera ( eye, Vector3D(0, 0, -1), Vector3D(0, 1, 0), Vector3D(1, 0, 0) );	// camera to be used
+//SphericalCamera		camera ( eye, Vector3D(0, 0, -1), Vector3D(0, 1, 0), Vector3D(1, 0, 0) );	// camera to be used
+SphericalCamera		camera (5, 0, 0);	// camera to be used
 
 FrameBuffer	buffer  ( 512, 512, FrameBuffer :: depth32 );
 FrameBuffer	buffer2 ( 512/4, 512/4 );
@@ -66,9 +67,8 @@ void displayBoxes ()
     //drawBox  ( Vector3D ( 0, 0, 0 ),   Vector3D ( 1, 1, 1 ),   stoneMap,  false );
     
     glBindTexture   ( GL_TEXTURE_2D, teapotMap );
-    glTranslatef    ( 0.0f, 0.0f, 0.0f );
-    glRotatef       ( angle * 45.3, 0, 1, 0 );  
-    glutSolidTeapot ( 0.5 );
+    //glRotatef       ( angle * 45.3, 0, 1, 0 );  
+    glutSolidTeapot ( 1.5 );
 
     glPopMatrix     ();
 }
@@ -166,17 +166,17 @@ void key ( unsigned char key, int x, int y )
 
 void    specialKey ( int key, int x, int y )
 {
-//    if ( key == GLUT_KEY_UP )
-//        yaw += M_PI / 90;
-//    else
-//    if ( key == GLUT_KEY_DOWN )
-//        yaw -= M_PI / 90;
-//	else
-//    if ( key == GLUT_KEY_RIGHT )
-//        roll += M_PI / 90;
-//    else
-//    if ( key == GLUT_KEY_LEFT )
-//        roll -= M_PI / 90;
+    if ( key == GLUT_KEY_UP )
+        camera.changeTheta(M_PI / 50);
+    else
+    if ( key == GLUT_KEY_DOWN )
+        camera.changeTheta(-M_PI / 50);
+	else
+    if ( key == GLUT_KEY_RIGHT )
+        camera.changePhi(M_PI / 50);
+    else
+		if ( key == GLUT_KEY_LEFT )
+			camera.changePhi(-M_PI / 50);
 //
 //	camera.setEulerAngles ( yaw, pitch, roll );
 //

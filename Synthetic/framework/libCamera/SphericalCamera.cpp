@@ -15,6 +15,33 @@ void	SphericalCamera :: setViewSize ( int theWidth, int theHeight, float theFov 
 	computeMatrix ();
 }
 
+SphericalCamera :: SphericalCamera(float i_ro, float i_phi, float i_theta)
+{
+
+	ro = i_ro;
+	phi = i_phi;
+	theta = i_theta;
+
+	updateCamera();
+
+	setViewSize (800, 600, 45);
+
+}
+
+void SphericalCamera :: updateCamera()
+{
+	float x = sin(phi) * cos(theta) * ro;
+	float z = cos(phi) * cos(theta) * ro;
+	float y = sin(theta) * ro;
+
+	pos = Vector3D(x, y, z);
+	viewDir = (-pos);
+	viewDir.normalize();
+	upDir = Vector3D(0, 1, 0);
+	sideDir = (viewDir ^ upDir).normalize();
+	upDir = (sideDir ^ viewDir).normalize();
+}
+
 void    SphericalCamera :: computeMatrix ()
 {
     viewDir.normalize ();       // normalize viewDir
@@ -86,4 +113,18 @@ void	SphericalCamera :: apply ()
 	glTranslatef  ( -pos.x, -pos.y, -pos.z );
 	
 	glGetFloatv ( GL_PROJECTION_MATRIX, proj );
+}
+
+void SphericalCamera :: changePhi(float i_delta)
+{
+	phi += i_delta;
+	updateCamera();
+	apply ();
+}
+
+void SphericalCamera :: changeTheta(float i_delta)
+{
+	theta += i_delta;
+	updateCamera();
+	apply ();
 }

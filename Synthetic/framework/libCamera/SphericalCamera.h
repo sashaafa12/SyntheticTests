@@ -10,18 +10,24 @@
 class SphericalCamera
 {
 public:
-	SphericalCamera(Vector3D i_pos, Vector3D i_viewDir, Vector3D i_upDir, Vector3D i_sideDir)
-	{
-		setViewSize (800, 600, 45);
-		viewDir = i_viewDir; 
-		upDir = i_upDir; 
-		sideDir = i_sideDir;
-		pos = i_pos;
-	}
+	//SphericalCamera(Vector3D i_pos, Vector3D i_viewDir, Vector3D i_upDir, Vector3D i_sideDir)
+	//{
+	//	setViewSize (800, 600, 45);
+	//	
+	//	viewDir = i_viewDir; 
+	//	upDir = i_upDir; 
+	//	sideDir = i_sideDir;
+	//	pos = i_pos;
+	//}
+
+	SphericalCamera(float i_ro, float i_phi, float i_theta);
 
 	void setViewSize ( int i_width, int i_height, float i_fov );
 	void apply ();
 	void    computeMatrix ();		
+	
+	void changePhi(float i_delta);
+	void changeTheta(float i_delta);
 
 private:
 
@@ -33,6 +39,9 @@ private:
 
     int width, height, fov;
 	float aspect;
+
+	float ro, phi, theta;
+	void updateCamera();
 
     Matrix3D		transf;				// camera transform (from world to camera space)
 
