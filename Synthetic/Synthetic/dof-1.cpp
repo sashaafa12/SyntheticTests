@@ -27,9 +27,10 @@
 #include	"Program/GlslProgram.h"
 #include	"utils.h"
 #include	"libCamera/Camera.h"
+#include	"libCamera/SphericalCamera.h"
 #include <iostream>
 
-Vector3D    eye   ( 0, 0, -1 );  // camera position
+Vector3D    eye   ( 0, 0, 5 );  // camera position
 unsigned    decalMap;                   // decal (diffuse) texture
 unsigned    stoneMap;
 unsigned    teapotMap;
@@ -42,7 +43,8 @@ float	focalDistance = 4.5;
 float	focalRange    = 20;
 float	radiusScale   = 3.0 / 512.0;
 
-Camera		camera ( eye, 0, 0, 0 );	// camera to be used
+//Camera		camera ( eye, 0, 0, 0 );	// camera to be used
+SphericalCamera		camera ( eye, Vector3D(0, 0, -1), Vector3D(0, 1, 0), Vector3D(1, 0, 0) );	// camera to be used
 
 FrameBuffer	buffer  ( 512, 512, FrameBuffer :: depth32 );
 FrameBuffer	buffer2 ( 512/4, 512/4 );
@@ -132,81 +134,56 @@ void reshape ( int w, int h )
 
 void key ( unsigned char key, int x, int y )
 {
-    if ( key == 27 || key == 'q' || key == 'Q' )        // quit requested
-        exit ( 0 );
-    else
-   	if ( key == 'w' || key == 'W' )
-   		camera.moveBy ( camera.getViewDir () * 0.2 );
-   	else
-   	if ( key == 'x' || key == 'X' )
-   		camera.moveBy ( -camera.getViewDir () * 0.2 );
-   	else
-   	if ( key == 'a' || key == 'A' )
-   		camera.moveBy ( -camera.getSideDir () * 0.2 );
-   	else
-   	if ( key == 'd' || key == 'D' )
-   		camera.moveBy ( camera.getSideDir () * 0.2 );
-	else
-	if ( key == '+' )
-		focalDistance += 0.1;
-	else
-	if ( key == '-' )
-		focalDistance -= 0.1;
-	else
-	if ( key == '*' )
-		focalRange += 0.3;
-	else
-	if ( key == '/' )
-		focalRange -= 0.3;
+ //   if ( key == 27 || key == 'q' || key == 'Q' )        // quit requested
+ //       exit ( 0 );
+ //   else
+ //  	if ( key == 'w' || key == 'W' )
+ //  		camera.moveBy ( camera.getViewDir () * 0.2 );
+ //  	else
+ //  	if ( key == 'x' || key == 'X' )
+ //  		camera.moveBy ( -camera.getViewDir () * 0.2 );
+ //  	else
+ //  	if ( key == 'a' || key == 'A' )
+ //  		camera.moveBy ( -camera.getSideDir () * 0.2 );
+ //  	else
+ //  	if ( key == 'd' || key == 'D' )
+ //  		camera.moveBy ( camera.getSideDir () * 0.2 );
+	//else
+	//if ( key == '+' )
+	//	focalDistance += 0.1;
+	//else
+	//if ( key == '-' )
+	//	focalDistance -= 0.1;
+	//else
+	//if ( key == '*' )
+	//	focalRange += 0.3;
+	//else
+	//if ( key == '/' )
+	//	focalRange -= 0.3;
 
-   	glutPostRedisplay ();
+ //  	glutPostRedisplay ();
 }
 
 void    specialKey ( int key, int x, int y )
 {
-    if ( key == GLUT_KEY_UP )
-        yaw += M_PI / 90;
-    else
-    if ( key == GLUT_KEY_DOWN )
-        yaw -= M_PI / 90;
-	else
-    if ( key == GLUT_KEY_RIGHT )
-        roll += M_PI / 90;
-    else
-    if ( key == GLUT_KEY_LEFT )
-        roll -= M_PI / 90;
-
-	camera.setEulerAngles ( yaw, pitch, roll );
-
-    glutPostRedisplay ();
+//    if ( key == GLUT_KEY_UP )
+//        yaw += M_PI / 90;
+//    else
+//    if ( key == GLUT_KEY_DOWN )
+//        yaw -= M_PI / 90;
+//	else
+//    if ( key == GLUT_KEY_RIGHT )
+//        roll += M_PI / 90;
+//    else
+//    if ( key == GLUT_KEY_LEFT )
+//        roll -= M_PI / 90;
+//
+//	camera.setEulerAngles ( yaw, pitch, roll );
+//
+//    glutPostRedisplay ();
 }
 
-void	mouseFunc ( int x, int y )
-{
-	static	int	lastX = -1;
-	static	int	lastY = -1;
-
-	if ( lastX == -1 )				// not initialized
-	{
-		lastX = x;
-		lastY = y;
-	}
-
-	yaw  -= (y - lastY) * 0.02;
-	roll += (x - lastX) * 0.02;
-
-	lastX = x;
-	lastY = y;
-
-	camera.setEulerAngles ( yaw, pitch, roll );
-
-	std::cout << yaw << " " << pitch << " " << roll << endl;
-	std::cout << camera.getPos().x << " " << camera.getPos().y << " " << camera.getPos().z << endl;
-	std::cout << camera.getViewDir().x << " " << camera.getViewDir().y << " " << camera.getViewDir().z << endl;
-	std::cout << std::endl;
-
-	glutPostRedisplay ();
-}
+//void	mouseFunc ( int x, int y );
 
 void    animate ()
 {
@@ -236,7 +213,7 @@ int main ( int argc, char * argv [] )
     glutReshapeFunc  ( reshape    );
     glutKeyboardFunc ( key        );
     glutSpecialFunc  ( specialKey );
-    glutPassiveMotionFunc ( mouseFunc );
+    //glutPassiveMotionFunc ( mouseFunc );
     glutIdleFunc     ( animate    );
 
     init           ();
@@ -327,8 +304,8 @@ int main ( int argc, char * argv [] )
 	blur.setTexture  ( "tex", 0 );
 	blur.unbind      ();
 
-	camera.setRightHanded ( false );
-	camera.setEulerAngles ( 0, 0, -1.1);
+	//camera.setRightHanded ( false );
+	//camera.setEulerAngles ( 0, 0, -1.1);
 
 
 	printf ( "Depth of Field demo.\n\tUse + and - to change focal distance.\n\tUse * and / to change focal range.\n\tUse mouse and wsad to control camera.\n" );

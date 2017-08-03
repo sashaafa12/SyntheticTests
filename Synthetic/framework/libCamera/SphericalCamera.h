@@ -10,6 +10,15 @@
 class SphericalCamera
 {
 public:
+	SphericalCamera(Vector3D i_pos, Vector3D i_viewDir, Vector3D i_upDir, Vector3D i_sideDir)
+	{
+		setViewSize (800, 600, 45);
+		viewDir = i_viewDir; 
+		upDir = i_upDir; 
+		sideDir = i_sideDir;
+		pos = i_pos;
+	}
+
 	void setViewSize ( int i_width, int i_height, float i_fov );
 	void apply ();
 	void    computeMatrix ();		
