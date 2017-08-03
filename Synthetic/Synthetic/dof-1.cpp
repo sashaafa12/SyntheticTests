@@ -80,6 +80,8 @@ void display ()
 	program1.bind            ();
 	program1.setUniformFloat ( "focalDistance", focalDistance );
 	program1.setUniformFloat ( "focalRange",    focalRange    );
+	//program1.setUniformMatrix( "transform0",    transform0    );
+	//program1.setUniformMatrix ( "transformInverted",    transformInverted    );
 	camera.apply             ();
 	
 	displayBoxes ();

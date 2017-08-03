@@ -94,8 +94,7 @@ void	SphericalCamera :: apply ()
 	m [13] = 0;
 	m [14] = 0;
 	m [15] = 1;
-
-														// set current viewport
+															// set current viewport
 	glViewport     ( 0, 0, width, height);
 
 	glMatrixMode   ( GL_PROJECTION );					// select projection matrix
@@ -109,6 +108,7 @@ void	SphericalCamera :: apply ()
 	glMultMatrixf ( m );
 	glTranslatef  ( -pos.x, -pos.y, -pos.z );
 	
+	glGetFloatv ( GL_MODELVIEW_PROJECTION_NV,  proj);
 	glGetFloatv ( GL_PROJECTION_MATRIX, proj );
 }
 
