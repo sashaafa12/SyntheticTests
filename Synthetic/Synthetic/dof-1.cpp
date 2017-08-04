@@ -44,7 +44,7 @@ float	focalDistance = 4.5;
 float	focalRange    = 20;
 float	radiusScale   = 3.0 / 512.0;
 
-float transformProj[16];
+float transformProjection[16];
 float transformModelView[16];
 Matrix4x4 transformMatrix;
 
@@ -84,11 +84,10 @@ void display ()
 
 	program1.bind            ();
 	program1.setUniformFloat ( "focalDistance", focalDistance );
-	program1.setUniformFloat ( "focalRa	nge",    focalRange    );
-	program1.setUniformMatrix( "transformProj",    transformProj    );
+	program1.setUniformFloat ( "focalRange",    focalRange    );
+	program1.setUniformMatrix( "transformProjection",    transformProjection    );
 	program1.setUniformMatrix( "transformModelView",    transformModelView    );
 	program1.setUniformMatrix( "transformMatrix",    transformMatrix    );
-	//program1.setUniformMatrix ( "transformInverted",    transformInverted    );
 	camera.apply             ();
 	
 	displayBoxes ();
@@ -265,21 +264,21 @@ int main ( int argc, char * argv [] )
 					
 	buffer3.unbind ();
 
-	if ( !program1.loadShaders ( "dof1-p1.vsh", "dof1-p1.fsh" ) )
+	if ( !program1.loadShaders ( "dof1p1.vsh", "dof1p1.fsh" ) )
 	{
 		printf ( "Error loading shaders:\n%s\n", program1.getLog ().c_str () );
 
 		return 3;
 	}
 	
-	if ( !program2.loadShaders ( "dof1-p2.vsh", "dof1-p2.fsh" ) )
+	if ( !program2.loadShaders ( "dof1p2.vsh", "dof1p2.fsh" ) )
 	{
 		printf ( "Error loading shaders2:\n%s\n", program2.getLog ().c_str () );
 
 		return 3;
 	}
 
-	if ( !program3.loadShaders ( "dof1-p3.vsh", "dof1-p3.fsh" ) )
+	if ( !program3.loadShaders ( "dof1p3.vsh", "dof1p3.fsh" ) )
 	{
 		printf ( "Error loading shaders3:\n%s\n", program3.getLog ().c_str () );
 

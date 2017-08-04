@@ -105,12 +105,12 @@
   <ItemGroup>
     <None Include="blur.fsh" />
     <None Include="blur.vsh" />
-    <None Include="dof1-p1.fsh" />
-    <None Include="dof1-p1.vsh" />
-    <None Include="dof1-p2.fsh" />
-    <None Include="dof1-p2.vsh" />
-    <None Include="dof1-p3.fsh" />
-    <None Include="dof1-p3.vsh" />
+    <None Include="dof1p1.fsh" />
+    <None Include="dof1p1.vsh" />
+    <None Include="dof1p2.fsh" />
+    <None Include="dof1p2.vsh" />
+    <None Include="dof1p3.fsh" />
+    <None Include="dof1p3.vsh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

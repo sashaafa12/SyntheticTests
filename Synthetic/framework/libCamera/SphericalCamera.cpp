@@ -3,6 +3,7 @@
 #include	"Quaternion.h"
 #include	"Transform3D.h"
 #include	"Plane.h"
+#include "../3D/Matrix4x4.h"
 
 
 void	SphericalCamera :: setViewSize ( int theWidth, int theHeight, float theFov )
@@ -67,7 +68,9 @@ void    SphericalCamera :: computeMatrix ()
     transf [2][2] = viewDir  [2];
 }
 
-extern float transform[16];
+extern float transformProjection[16];
+extern float transformModelView[16];
+extern Matrix4x4 transformMatrix;
 
 void	SphericalCamera :: apply ()
 {
@@ -103,14 +106,23 @@ void	SphericalCamera :: apply ()
 															// calculate aspect ratio of the window
 	gluPerspective ( fov, aspect, 0.1, 100);
 
+	glGetFloatv ( GL_PROJECTION_MATRIX, transformProjection );
+
 	glMatrixMode   ( GL_MODELVIEW );					// select modelview matrix
 	glLoadIdentity ();									// reset modelview matrix
 
 	glMultMatrixf ( m );
 	glTranslatef  ( -pos.x, -pos.y, -pos.z );
 	
-	glGetFloatv ( GL_MODELVIEW_PROJECTION_NV,  transform);
-	//glGetFloatv ( GL_PROJECTION_MATRIX, transform );
+	glGetFloatv ( GL_MODELVIEW_MATRIX, transformModelView);
+
+	/*for(int i = 0; i < 4; i++)
+		memcpy(transformMatrix.m[i], &transformModelView[4 * i], 4 * sizeof(float));
+	*/
+
+	glGetFloatv ( GL_MODELVIEW_PROJECTION_NV, transformModelView);
+
+	//transformMatrix = transformMatrix.inverse();
 }
 
 void SphericalCamera :: changePhi(float i_delta)
