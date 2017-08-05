@@ -19,6 +19,14 @@ public:
 	void changePhi(float i_delta);
 	void changeTheta(float i_delta);
 
+	Matrix3D getTransf()
+	{
+	  return transf;
+	}
+	Vector3D getPos()
+	{
+		return pos;
+	}
 private:
 
     Vector3D		pos;				// camera position

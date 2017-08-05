@@ -147,7 +147,7 @@ void    Camera :: computeMatrix ()
     float	fovValueY = 1 / (float)tan ( halfAngle );
 	float	fovValueX = fovValueY / aspect;
 
-    transf [0][0] = (sideDir [0] * fovValueX + viewDir [0]) * 0.5f * width;
+    transf [0][0] = (sideDir [0] * fovValueX + viewDir [0]) * 0.5f * width;	
     transf [0][1] = (sideDir [1] * fovValueX + viewDir [1]) * 0.5f * width;
     transf [0][2] = (sideDir [2] * fovValueX + viewDir [2]) * 0.5f * width;
     transf [1][0] = (upDir   [0] * fovValueY + viewDir [0]) * 0.5f * height;

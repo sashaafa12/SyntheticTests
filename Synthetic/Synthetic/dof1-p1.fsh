@@ -1,8 +1,8 @@
 //
 // Fragment shader of 1st pass of depth-of-field rendering
 //
-#version 130 
-precision mediump float;
+//#version 330 
+
 varying vec2 projection;
 
 varying mediump float z;
@@ -17,11 +17,7 @@ void main (void)
 	float	blur = clamp ( abs ( focalDistance  + z ) / focalRange, 0.0, 1.0 );
 	vec2 coord = gl_TexCoord [0].st; //vec2(gl_Position.x, gl_Position.y)
 	coord = projection;
-	coord = vec2(gl_FragCoord.x / 512, gl_FragCoord.y / 512);
+	//coord = vec2(gl_FragCoord.x / 512, gl_FragCoord.y / 512);
 	
 	gl_FragData [0] = vec4 ( texture2D ( tex, coord).rgb, blur );
-
-
-	//mat4 commonTransform = transform0 * transformInverted;
-	
 }

@@ -47,6 +47,7 @@ float	radiusScale   = 3.0 / 512.0;
 float transformProjection[16];
 float transformModelView[16];
 Matrix4x4 transformMatrix;
+Matrix3D transform3;
 
 //Camera		camera ( eye, 0, 0, 0 );	// camera to be used
 //SphericalCamera		camera ( eye, Vector3D(0, 0, -1), Vector3D(0, 1, 0), Vector3D(1, 0, 0) );	// camera to be used
@@ -87,7 +88,10 @@ void display ()
 	program1.setUniformFloat ( "focalRange",    focalRange    );
 	program1.setUniformMatrix( "transformProjection",    transformProjection    );
 	program1.setUniformMatrix( "transformModelView",    transformModelView    );
-	program1.setUniformMatrix( "transformMatrix",    transformMatrix    );
+	program1.setUniformMatrix( "transform3",    transform3    );
+	program1.setUniformMatrix( "transfFromCamera",    camera.getTransf());
+	program1.setUniformVector("posCamera",    camera.getPos());
+	
 	camera.apply             ();
 	
 	displayBoxes ();
@@ -264,21 +268,21 @@ int main ( int argc, char * argv [] )
 					
 	buffer3.unbind ();
 
-	if ( !program1.loadShaders ( "dof1p1.vsh", "dof1p1.fsh" ) )
+	if ( !program1.loadShaders ( "dof1-p1.vsh", "dof1-p1.fsh" ) )
 	{
 		printf ( "Error loading shaders:\n%s\n", program1.getLog ().c_str () );
 
 		return 3;
 	}
 	
-	if ( !program2.loadShaders ( "dof1p2.vsh", "dof1p2.fsh" ) )
+	if ( !program2.loadShaders ( "dof1-p2.vsh", "dof1-p2.fsh" ) )
 	{
 		printf ( "Error loading shaders2:\n%s\n", program2.getLog ().c_str () );
 
 		return 3;
 	}
 
-	if ( !program3.loadShaders ( "dof1p3.vsh", "dof1p3.fsh" ) )
+	if ( !program3.loadShaders ( "dof1-p3.vsh", "dof1-p3.fsh" ) )
 	{
 		printf ( "Error loading shaders3:\n%s\n", program3.getLog ().c_str () );
 

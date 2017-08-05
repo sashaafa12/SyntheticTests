@@ -28,8 +28,8 @@ SphericalCamera :: SphericalCamera(float i_ro, float i_phi, float i_theta)
 
 void SphericalCamera :: updateCamera()
 {
-	float x = sin(phi) * cos(theta) * ro;
-	float z = cos(phi) * cos(theta) * ro;
+	float x = cos(phi) * cos(theta) * ro;
+	float z = sin(phi) * cos(theta) * ro;
 	float y = sin(theta) * ro;
 
 	pos = Vector3D(x, y, z);
@@ -40,17 +40,25 @@ void SphericalCamera :: updateCamera()
 	upDir = (sideDir ^ viewDir).normalize();
 }
 
+extern float transformProjection[16];
+extern float transformModelView[16];
+extern Matrix4x4 transformMatrix;
+extern Matrix3D transform3;
+
 void    SphericalCamera :: computeMatrix ()
 {
-    viewDir.normalize ();       // normalize viewDir
-                                // compute upDir perpendicular to viewDir
-    upDir -= (upDir & viewDir) * viewDir;
+	viewDir.normalize ();       // normalize viewDir
+	// compute upDir perpendicular to viewDir
+	upDir -= (upDir & viewDir) * viewDir;
 
-                                // compute sideDir to form orthogonal basis
-    sideDir = upDir ^ viewDir;
-	    
-    upDir  .normalize ();      // orthonormalize upDir and sideDir
-    sideDir.normalize ();
+	// compute sideDir to form orthogonal basis
+	sideDir = upDir ^ viewDir;
+
+	//if ( !rightHanded )			// invert side orientation: right -> left
+	//	sideDir = -sideDir;
+
+	upDir  .normalize ();      // orthonormalize upDir and sideDir
+	sideDir.normalize ();
 
     // now build transform matrix
 	float	halfAngle = 0.5f * M_PI * fov / 180.0f;
@@ -66,11 +74,19 @@ void    SphericalCamera :: computeMatrix ()
     transf [2][0] = viewDir  [0];
     transf [2][1] = viewDir  [1];
     transf [2][2] = viewDir  [2];
+
+	Matrix3D transfMat3(Vector3D(transf [0][0], transf [0][1], transf [0][2]),
+						Vector3D(transf [1][0], transf [1][1], transf [1][2]),
+						Vector3D(transf [2][0], transf [2][1], transf [2][2]));
+
+	transform3 = transfMat3;
+
+	//for(int i = 0; i < 4; i++)
+	//	memcpy(transformMatrix[i], transfMat3[3 * i], 3 * sizeof(float));
+
+
 }
 
-extern float transformProjection[16];
-extern float transformModelView[16];
-extern Matrix4x4 transformMatrix;
 
 void	SphericalCamera :: apply ()
 {
@@ -106,21 +122,30 @@ void	SphericalCamera :: apply ()
 															// calculate aspect ratio of the window
 	gluPerspective ( fov, aspect, 0.1, 100);
 
-	glGetFloatv ( GL_PROJECTION_MATRIX, transformProjection );
 
 	glMatrixMode   ( GL_MODELVIEW );					// select modelview matrix
 	glLoadIdentity ();									// reset modelview matrix
 
+
 	glMultMatrixf ( m );
+
 	glTranslatef  ( -pos.x, -pos.y, -pos.z );
 	
+	/*transformMatrix[0][3] = -pos.x;
+	transformMatrix[1][3] = -pos.y;
+	transformMatrix[2][3] = -pos.z;*/
+	transformMatrix[3][3] = 1;
+
+	glGetFloatv ( GL_PROJECTION_MATRIX, transformProjection );
 	glGetFloatv ( GL_MODELVIEW_MATRIX, transformModelView);
+
+	
 
 	/*for(int i = 0; i < 4; i++)
 		memcpy(transformMatrix.m[i], &transformModelView[4 * i], 4 * sizeof(float));
 	*/
 
-	glGetFloatv ( GL_MODELVIEW_PROJECTION_NV, transformModelView);
+	//glGetFloatv ( GL_MODELVIEW_PROJECTION_NV, transformModelView);
 
 	//transformMatrix = transformMatrix.inverse();
 }
