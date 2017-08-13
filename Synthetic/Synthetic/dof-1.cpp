@@ -48,6 +48,7 @@ float transformProjection[16];
 float transformModelView[16];
 Matrix4x4 transformMatrix;
 Matrix3D transform3;
+Matrix3D modelMatrix;
 
 //Camera		camera ( eye, 0, 0, 0 );	// camera to be used
 //SphericalCamera		camera ( eye, Vector3D(0, 0, -1), Vector3D(0, 1, 0), Vector3D(1, 0, 0) );	// camera to be used
@@ -76,11 +77,12 @@ void displayBoxes ()
     glPopMatrix     ();
 }
 
+
 void display ()
 {
 	buffer.bind   ();
 	program1.bind ();
-	
+		
     glClear ( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
 	program1.bind            ();
@@ -89,11 +91,13 @@ void display ()
 	program1.setUniformMatrix( "transformProjection",    transformProjection    );
 	program1.setUniformMatrix( "transformModelView",    transformModelView    );
 	program1.setUniformMatrix( "transform3",    transform3    );
-	program1.setUniformMatrix( "transfFromCamera",    camera.getTransf());
+	program1.setUniformMatrix( "transfMatrix",    transformMatrix);
 	program1.setUniformVector("posCamera",    camera.getPos());
+	program1.setUniformMatrix("modelMatrix",    modelMatrix);
 	
+
 	camera.apply             ();
-	
+
 	displayBoxes ();
 	
 	program1.unbind ();
@@ -186,6 +190,9 @@ void    specialKey ( int key, int x, int y )
     else
 		if ( key == GLUT_KEY_LEFT )
 			camera.changePhi(-M_PI / 50);	
+
+	cout << camera.getPos().x << " " << camera.getPos().y << " " << camera.getPos().z << endl;
+
 //
 //	camera.setEulerAngles ( yaw, pitch, roll );
 //

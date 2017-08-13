@@ -44,6 +44,8 @@ extern float transformProjection[16];
 extern float transformModelView[16];
 extern Matrix4x4 transformMatrix;
 extern Matrix3D transform3;
+extern Matrix3D modelMatrix;
+
 
 void    SphericalCamera :: computeMatrix ()
 {
@@ -80,6 +82,10 @@ void    SphericalCamera :: computeMatrix ()
 						Vector3D(transf [2][0], transf [2][1], transf [2][2]));
 
 	transform3 = transfMat3;
+
+	modelMatrix = Matrix3D(sideDir, upDir, -viewDir);
+	modelMatrix = modelMatrix.inverse();
+
 
 	//for(int i = 0; i < 4; i++)
 	//	memcpy(transformMatrix[i], transfMat3[3 * i], 3 * sizeof(float));
@@ -141,13 +147,12 @@ void	SphericalCamera :: apply ()
 
 	
 
-	/*for(int i = 0; i < 4; i++)
+	for(int i = 0; i < 4; i++)
 		memcpy(transformMatrix.m[i], &transformModelView[4 * i], 4 * sizeof(float));
-	*/
-
-	//glGetFloatv ( GL_MODELVIEW_PROJECTION_NV, transformModelView);
-
+	//transformMatrix = transformMatrix.transpose();
 	//transformMatrix = transformMatrix.inverse();
+
+	glGetFloatv ( GL_MODELVIEW_PROJECTION_NV, transformModelView);
 }
 
 void SphericalCamera :: changePhi(float i_delta)
