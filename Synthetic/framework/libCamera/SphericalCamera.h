@@ -27,6 +27,16 @@ public:
 	{
 		return pos;
 	}
+
+	float getPhi()
+	{
+		return phi;
+	}
+
+	float getTheta()
+	{
+		return theta;
+	}
 private:
 
     Vector3D		pos;				// camera position

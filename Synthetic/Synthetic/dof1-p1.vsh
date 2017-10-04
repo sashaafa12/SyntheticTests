@@ -12,6 +12,7 @@ uniform mat4 transformProjection;
 uniform mat4 transform3;
 uniform mat4 transfMatrix;
 uniform vec3 posCamera;
+uniform float phi;
 
 uniform mat3 modelMatrix;
 #define M_PI 3.141597f
@@ -35,9 +36,8 @@ void main(void)
 	float y = camCoord.y / asp / tan(fov/2)  + 0.5;// / (camCoord.z * tan(fov/2) * asp) + 0.5;
 	//x = 512 * x;
 	//y = 512 * y;
-	
-	
-	vec4 projected = gl_ProjectionMatrix * gl_ModelViewMatrix * (gl_Vertex);// - posCamera4);
-	projected.xy = vec2(x,y);
+		
+	vec4 projected = gl_ProjectionMatrix * gl_ModelViewMatrix * (gl_Vertex) * mat4(cos(phi),-sin(phi),0,0,sin(phi),cos(phi),0,0,0,0,1,0,0,0,0,1);// - posCamera4);   mat4(cos(phi),0,sin(phi),0,0,1,0,0,-sin(phi),0,cos(phi),0,0,0,0,1);//
+	//projected.xy = vec2(x,y);
 	projection = -projected.xy / z / 2 + vec2(0.5, 0.5); 
 }

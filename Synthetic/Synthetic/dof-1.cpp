@@ -52,7 +52,7 @@ Matrix3D modelMatrix;
 
 //Camera		camera ( eye, 0, 0, 0 );	// camera to be used
 //SphericalCamera		camera ( eye, Vector3D(0, 0, -1), Vector3D(0, 1, 0), Vector3D(1, 0, 0) );	// camera to be used
-SphericalCamera		camera (5, M_PI / 2, 0);	// camera to be used
+SphericalCamera		camera (5, 0, 0);	// camera to be used
 
 FrameBuffer	buffer  ( 512, 512, FrameBuffer :: depth32 );
 FrameBuffer	buffer2 ( 512/4, 512/4 );
@@ -94,6 +94,7 @@ void display ()
 	program1.setUniformMatrix( "transfMatrix",    transformMatrix);
 	program1.setUniformVector("posCamera",    camera.getPos());
 	program1.setUniformMatrix("modelMatrix",    modelMatrix);
+	program1.setUniformFloat("phi",    camera.getPhi());
 	
 
 	camera.apply             ();

@@ -123,18 +123,15 @@ void	SphericalCamera :: apply ()
 															// set current viewport
 	glViewport     ( 0, 0, width, height);
 
+	// PROJECTION MATRIX
 	glMatrixMode   ( GL_PROJECTION );					// select projection matrix
 	glLoadIdentity ();									// reset projection matrix
-															// calculate aspect ratio of the window
 	gluPerspective ( fov, aspect, 0.1, 100);
 
-
+	// MODELVIEW MATRIX
 	glMatrixMode   ( GL_MODELVIEW );					// select modelview matrix
 	glLoadIdentity ();									// reset modelview matrix
-
-
 	glMultMatrixf ( m );
-
 	glTranslatef  ( -pos.x, -pos.y, -pos.z );
 	
 	/*transformMatrix[0][3] = -pos.x;
