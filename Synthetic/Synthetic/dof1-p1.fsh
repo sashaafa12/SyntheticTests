@@ -5,7 +5,7 @@
 
 varying vec2 projection;
 
-varying mediump float z;
+varying float z;
 
 uniform sampler2D tex;
 uniform float focalDistance, focalRange;
@@ -15,7 +15,7 @@ uniform float focalDistance, focalRange;
 void main (void)
 {
 	float	blur = clamp ( abs ( focalDistance  + z ) / focalRange, 0.0, 1.0 );
-	vec2 coord = gl_TexCoord [0].st; //vec2(gl_Position.x, gl_Position.y)
+	vec2 coord = gl_TexCoord [0].st; 
 	coord = projection;
 	//coord = vec2(gl_FragCoord.x / 512, gl_FragCoord.y / 512);
 	
